@@ -1,7 +1,7 @@
 ---
 title: Iris flower classification
 date: 2023-09-08 06:10:00 -0500
-categories: [Data Science, Machine]
+categories: [Data Science, Machine Learning]
 tags: [IrisDataset, MachineLearning, SVM, EDA]
 mermaid: true
 image:
