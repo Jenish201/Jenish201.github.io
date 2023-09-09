@@ -1,6 +1,5 @@
 ---
 title: Iris flower classification
-author:
 date: 2023-09-08 06:10:00 -0500
 categories: [Data Science, Machine]
 tags: [IrisDataset, MachineLearning, SVM, EDA]
