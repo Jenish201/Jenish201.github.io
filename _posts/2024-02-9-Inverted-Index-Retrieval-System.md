@@ -3,7 +3,6 @@ title: Medline Information Retrieval System with Mean Average Precision Evaluati
 date: 2024-02-09 02:28:00 -0500
 categories: [Data Science, Natural Language Processing]
 tags: [Query Processing, Text Analysis, Search Engine]
-pin: true
 ---
 
 ## Description:
