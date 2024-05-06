@@ -2,7 +2,7 @@
 title: "Text to Image Generator using Stable Diffusion and Tkinter"
 date: 2024-04-20 02:28:00 -0500
 categories: [Data Science, Machine Learning, Large Language Model, API]
-tags: [Data Science, Machine Learning, Mobile Technology, Pricing Dynamics, Consumer Behavior, Technology Sector, Kaggle Dataset]
+tags: [Data Science, Machine Learning, Large Language Model, API]
 ---
 
 # Text to Image Generator using Stable Diffusion and Tkinter
@@ -40,20 +40,4 @@ This project demonstrates an innovative application of artificial intelligence i
 3. **Adjust Creativity:** Adjust the guidance scale (default is 7) to modify image creativity.
 4. **Display Image:** The resulting image will be displayed directly within the application.
 
-## Installation and Setup
-
-1. **Clone Repository and Install Dependencies:**
-    ```bash
-    git clone <repository-url>
-    cd <repository-folder>
-    pip install -r requirements.txt
-    ```
-
-2. **Obtain Hugging Face API Token:**
-   - Visit [Hugging Face](https://huggingface.co/CompVis/stable-diffusion-v-1-4) to get your API token.
-
-3. **Configure Auth Token:**
-   - Set the `auth_token` in your environment by adding it to a Python file:
-   ```python
-   # authtoken.py
-   auth_token = "<YOUR_API_TOKEN>"
+If you would like to check out the repository please: [click here](https://github.com/Jenish201/Text_to_image.git)

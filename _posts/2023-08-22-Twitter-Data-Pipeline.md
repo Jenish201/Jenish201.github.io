@@ -3,7 +3,7 @@ title: Twitter Data Processing and Analysis
 date: 2023-08-22 06:10:00 -0500
 categories: [Data Science, Data Management]
 tags: [TwitterData, DataProcessing, SQLDatabase, SQLite3, WebScraping]
-pin: true
+pin: False
 ---
 
 
