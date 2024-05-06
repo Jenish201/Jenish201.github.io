@@ -1,10 +1,8 @@
 ---
 title: "Text to Image Generator using Stable Diffusion and Tkinter"
 date: 2024-04-20 02:28:00 -0500
-categories: 
-  - [Data Science, Machine Learning, Large Language Model, API]
-tags: 
-  - [Data Science, Machine Learning, Mobile Technology, Pricing Dynamics, Consumer Behavior, Technology Sector, Kaggle Dataset]
+categories: [Data Science, Machine Learning, Large Language Model, API]
+tags: [Data Science, Machine Learning, Mobile Technology, Pricing Dynamics, Consumer Behavior, Technology Sector, Kaggle Dataset]
 ---
 
 # Text to Image Generator using Stable Diffusion and Tkinter
