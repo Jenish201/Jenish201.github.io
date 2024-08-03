@@ -3,6 +3,7 @@ title: Yelp Recommendation System
 date: 2024-06-15 02:28:00 -0500
 categories: [Data Science, Machine Learning, Natural Language processing(NLP)]
 tags: [Recommendation System, Yelp Dataset, Data Preprocessing, Sentiment Analysis, Collaborative Filtering, Data Visualization, Predictive Modeling]
+pin: True
 ---
 ## Unlocking the Power of User Reviews for Personalized Recommendations
 In this project, I developed a Yelp recommendation system that harnesses the power of user reviews to provide personalized suggestions for businesses. By leveraging natural language processing (NLP) and machine learning techniques, I created a robust model that analyzes user preferences and recommends relevant businesses.
