@@ -1,28 +1,33 @@
 ---
 title: Twitter Data Processing and Analysis
 date: 2023-08-22 06:10:00 -0500
-categories: [Data Science, Data Management]
-tags: [TwitterData, DataProcessing, SQLDatabase, SQLite3, WebScraping]
-pin: False
+categories: [Data Science, Natural Language Processing(NLP), Social Media Analysis]
+tags: [Twitter API, Text ANalysis, Topic Modeling, Data Visualization, Data Preprocessing, Data Mining]
+pin: True
 ---
 
+## Uncovering Insights from Tweets
 
-In this portfolio project, I tackled the task of processing and analyzing Twitter data. The project involves several key components, including data retrieval from a web server, data storage in a SQLite database, data manipulation and analysis, and performance evaluation.
+In this project, I developed a Python script to collect, process, and analyze Twitter data, extracting valuable insights from tweets. By leveraging Twitter's API and natural language processing (NLP) techniques, I created a robust pipeline that transforms raw tweet data into actionable information.
 
-### Project highlight 
-1. **Data Retrieval**: I created a Python function to fetch tweets from a web server using the urllib library. This function allows for specifying the maximum number of tweets to retrieve.
+## Key Features:
+- **Data Collection**: Utilized Twitter's API to collect tweets based on specific keywords, hashtags, and user handles.
+- **Data Preprocessing**: Cleaned and preprocessed tweet data, removing noise and irrelevant information.
+- **Text Analysis**: Applied NLP techniques, such as tokenization, stemming, and sentiment analysis, to extract insights from tweet text.
+- **Data Visualization**: Created informative visualizations to showcase tweet trends, sentiment, and topic modeling results.
 
-2. **SQLite Database**: I designed a SQLite database structure to store tweets, user information, and geographical data. The database schema includes tables for tweets, users, and geographical information, with appropriate foreign key relationships.
+## What You'll Find in the Repository:
+- A Python script (*twitter_data_analysis_and_processing.py*) that implements the data collection, preprocessing, and analysis pipeline
+- A detailed explanation of the project's methodology and results
 
-3. **Data Parsing**: I implemented classes to parse and organize the fetched JSON data into meaningful Python objects. These classes include Tweet and User classes for handling tweet and user data, respectively.
+## Why This Project Matters:
+This project demonstrates my ability to:
+- Collect and process large datasets from social media platforms
+- Apply NLP techniques to extract insights from unstructured text data
+- Develop and implement data pipelines using Python
+- Communicate complex technical concepts through clear and concise code
 
-4. **Batch Data Insertion**: To optimize data insertion into the database, I implemented batch insertion functions for both tweets and geographical data. This improves efficiency when processing a large number of tweets.
+## Visit the Repository:
+Check out the repository to explore the project in more detail and discover how I used Python and NLP to uncover insights from Twitter data.
 
-5. **Data Analysis**: I conducted various data analysis tasks, including querying the database to calculate average latitude for each user and measuring the performance of different functions.
-
-6. **Performance Evaluation**: I designed a performance evaluation framework to assess the runtime of key functions under different scenarios, such as data retrieval, data parsing, and data analysis. This helps in understanding the scalability and efficiency of the code.
-
-### Conclusion:
-This project demonstrates my proficency in data processing, database management, and performance analysis. It highlights my ability to work with real-world data and optimize code for efficiency.
-
-If you would like to check out the repository please:    [click here](https://github.com/Jenish201/Twitter_data_processing_analysis)
+[Link to the repository](https://github.com/Jenish201/Twitter_data_processing_analysis)
