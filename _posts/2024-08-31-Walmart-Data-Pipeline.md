@@ -9,6 +9,12 @@ visual: pipeline
 featured: true
 repo: https://github.com/Jenish201/Building-A-Retail-Data-Pipeline
 tags: [Data Engineering, ETL, PostgreSQL, Parquet, Data Validation]
+figures:
+  - chart: walmart-monthly
+    title: Average weekly sales by month
+    caption: >-
+      The pipeline's output, aggregated from 106,193 cleaned store, department and week rows.
+      November and December run 9% and 17% above the January–October average of $33.6k.
 ---
 
 ## Unlocking Insights from Sales Data for Informed Decision-Making

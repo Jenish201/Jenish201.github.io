@@ -9,6 +9,15 @@ visual: stream
 featured: true
 repo: https://github.com/Jenish201/Twitter_data_processing_analysis
 tags: [Twitter API, Text ANalysis, Topic Modeling, Data Visualization, Data Preprocessing, Data Mining]
+figures_eyebrow: From the benchmark
+figures_title: How the loaders scaled.
+figures:
+  - chart: twitter-runtime
+    title: Load time at 130k and 650k tweets
+    caption: >-
+      All four loading strategies scale roughly linearly: five times the tweets took four to five times as long.
+      Inserting 2,500 rows per batch (D) beat row-by-row loading from the same file (C) by about 9% at 650k tweets.
+      Values are read from the benchmark chart in the repository.
 ---
 
 ## Uncovering Insights from Tweets

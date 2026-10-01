@@ -9,6 +9,12 @@ visual: index
 featured: true
 repo: https://github.com/Jenish201/Medline-IR-System
 tags: [Query Processing, Text Analysis, Search Engine]
+figures:
+  - chart: medline-ap
+    title: Average precision per query
+    caption: >-
+      Thirty Medline queries run against 1,033 abstracts and 11,463 indexed terms.
+      Precision ranges from 0.22 (Q20) to 0.92 (Q13); highlighted queries beat the 0.566 mean.
 ---
 
 ## Description

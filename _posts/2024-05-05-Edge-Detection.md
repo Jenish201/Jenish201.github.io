@@ -9,6 +9,17 @@ visual: edge
 featured: false
 repo: https://github.com/Jenish201/Edge_detection
 tags: [Real time, Computer vision, Canny, OpenCV]
+figures_eyebrow: From the app
+figures_title: The app in action.
+figures:
+  - images:
+      - src: /assets/projects/edge-detection/canny-output
+        w: 793
+        h: 633
+        alt: Black webcam frame with white Canny edges outlining a face, hair, shoulders and a raised hand
+    title: Canny output on a live frame
+    caption: >-
+      A frame from the running app. With hysteresis thresholds of 180 and 200, Canny keeps only the strongest edges — face, hair, shoulders and a raised hand.
 ---
 
 ## Project Description

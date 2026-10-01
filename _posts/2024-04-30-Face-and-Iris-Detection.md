@@ -9,6 +9,18 @@ visual: face
 featured: false
 repo: https://github.com/Jenish201/face_and_iris_detection
 tags: [Real time, Computer vision, Face, Iris, OpenCV]
+figures_eyebrow: From the app
+figures_title: The app in action.
+figures:
+  - images:
+      - src: /assets/projects/face-detection/webcam-detection
+        w: 595
+        h: 575
+        alt: Webcam frame of Jenish with a yellow box around the face and red boxes around both eyes
+    title: Live detection from the webcam
+    caption: >-
+      A frame from the running app. One Haar cascade finds the face (yellow, 100–300 px), a second finds
+      eyes (red, 30–50 px) across the whole greyscale frame.
 ---
 
 ## Project Description

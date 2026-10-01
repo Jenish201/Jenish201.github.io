@@ -724,6 +724,53 @@ body::before {
 .prose code { font-family: var(--mono); font-size: 0.85em; padding: 0.15em 0.4em; border-radius: 0.35rem; background: var(--bg-3); color: var(--fg); }
 .prose--lead { font-size: clamp(1.1rem, 1.5vw, 1.25rem); max-width: 38rem; }
 
+/* Figures drawn from the project notebooks */
+.case__body { min-width: 0; }
+.figs { margin-top: clamp(4rem, 8vw, 6rem); padding-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 1px solid var(--line); display: grid; gap: clamp(2.5rem, 5vw, 3.5rem); }
+.figs__head { display: grid; gap: 1rem; justify-items: start; }
+.figs__title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
+.figs, .fig { grid-template-columns: minmax(0, 1fr); }
+.fig { display: grid; gap: 1rem; min-width: 0; }
+.fig .bezel, .fig__frame { min-width: 0; }
+.fig__frame { background: linear-gradient(180deg, var(--bg-3), var(--bg-2)); }
+.fig__frame--chart { padding: clamp(1rem, 2.5vw, 1.75rem) clamp(0.75rem, 2vw, 1.5rem); }
+.fig__frame img { width: 100%; height: auto; }
+.fig__gallery { display: grid; grid-template-columns: repeat(var(--n, 1), minmax(0, 1fr)); gap: 2px; background: var(--bg); }
+.fig__gallery picture { display: block; }
+.fig__gallery img { width: 100%; height: auto; }
+.fig__cap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: baseline; max-width: 62ch; font-size: 0.9375rem; line-height: 1.6; color: var(--fg-2); text-wrap: pretty; }
+.fig__cap strong { color: var(--fg); font-weight: 500; }
+.fig__num { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--acc); white-space: nowrap; }
+
+.chart { width: 100%; height: auto; overflow: visible; font-family: var(--mono); }
+.chart * { vector-effect: non-scaling-stroke; }
+.chart text { font-size: 12px; }
+.c-grid { stroke: var(--line); stroke-width: 1; }
+.c-axis { fill: var(--fg-3); font-size: 11px !important; }
+.c-label { fill: var(--fg-2); }
+.c-label--strong { fill: var(--fg); font-weight: 500; }
+.c-value { fill: var(--fg-2); font-weight: 500; }
+.c-value--strong { fill: var(--fg); }
+.c-bar { fill: var(--fg-3); opacity: 0.75; transition: opacity 0.3s var(--ease); }
+.c-bar--dim { opacity: 0.45; }
+.c-bar--acc { fill: var(--acc); opacity: 1; }
+.c-bar:hover { opacity: 1; }
+.c-track { fill: rgba(255, 238, 214, 0.035); }
+.c-line { fill: none; stroke: var(--fg-3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.c-line--acc { stroke: var(--acc); }
+.c-area { fill: var(--acc-dim); }
+.c-dot { fill: var(--fg-2); stroke: var(--bg-2); stroke-width: 2; }
+.c-dot--acc { fill: var(--acc); }
+.c-dot--hollow { fill: var(--bg-2); stroke: var(--fg-2); stroke-width: 1.5; }
+.c-whisker { stroke: var(--fg-3); stroke-width: 1.5; }
+.c-box { fill: var(--bg-3); stroke: var(--fg-2); stroke-width: 1.25; }
+.c-box--acc { fill: var(--acc-dim); stroke: var(--acc); }
+.c-median { stroke: var(--fg); stroke-width: 2; }
+.c-leader { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.c-ref { stroke: var(--fg); stroke-width: 1.25; stroke-dasharray: 4 4; opacity: 0.7; }
+.chart rect, .chart circle { cursor: default; }
+
+
 .next { border-top: 1px solid var(--line); }
 .next__link { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 1.5rem 2rem; padding: clamp(4rem, 8vw, 7rem) 0; }
 .next__link .eyebrow { grid-column: 1 / -1; justify-self: start; }
@@ -856,6 +903,12 @@ body::before {
 
   .ledger__row { grid-template-columns: 3.5rem minmax(0, 1fr); }
   .ledger__org { grid-column: 2; }
+}
+
+@media (max-width: 700px) {
+  .fig__frame--chart { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
+  .fig__frame--chart .chart { min-width: 560px; }
+  .fig__cap { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
 }
 
 @media (max-width: 480px) {

@@ -55,8 +55,43 @@ body_class: project
       {%- endif -%}
     </aside>
 
-    <div class="prose">
-      {{ content }}
+    <div class="case__body">
+      <div class="prose">
+        {{ content }}
+      </div>
+
+      {%- if page.figures -%}
+      <section class="figs" aria-labelledby="figs-title">
+        <header class="figs__head">
+          <p class="eyebrow reveal">{{ page.figures_eyebrow | default: "From the notebooks" }}</p>
+          <h2 class="figs__title reveal" id="figs-title">{{ page.figures_title | default: "What the data showed." }}</h2>
+        </header>
+        {%- for fig in page.figures -%}
+        <figure class="fig reveal">
+          <div class="bezel">
+            <div class="bezel__core fig__frame{% if fig.chart %} fig__frame--chart{% endif %}">
+              {%- if fig.chart -%}
+                {% include charts/{{ fig.chart }}.svg %}
+              {%- else -%}
+                <div class="fig__gallery" style="--n:{{ fig.images | size }}">
+                  {%- for im in fig.images -%}
+                  <picture>
+                    <source type="image/webp" srcset="{{ im.src | append: '.webp' | relative_url }}">
+                    <img src="{{ im.src | append: '.jpg' | relative_url }}" width="{{ im.w }}" height="{{ im.h }}" alt="{{ im.alt }}" loading="lazy" decoding="async">
+                  </picture>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+          <figcaption class="fig__cap">
+            <span class="fig__num">Fig. {{ forloop.index }}</span>
+            <span><strong>{{ fig.title }}.</strong> {{ fig.caption }}</span>
+          </figcaption>
+        </figure>
+        {%- endfor -%}
+      </section>
+      {%- endif -%}
     </div>
   </div>
 </article>

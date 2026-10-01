@@ -9,6 +9,22 @@ visual: graph
 featured: true
 repo: https://github.com/Jenish201/Yelp_Recommendation
 tags: [Recommendation System, Yelp Dataset, Data Preprocessing, Sentiment Analysis, Collaborative Filtering, Data Visualization, Predictive Modeling]
+figures:
+  - chart: yelp-monthly
+    title: Yelp reviews per month, 2005–2022
+    caption: >-
+      Review volume peaked near 87k a month in mid-2018 and fell to about 25k in spring 2020.
+      Traced from the exploratory notebook's chart.
+  - chart: yelp-sentiment
+    title: Content-based error, with and without review sentiment
+    caption: >-
+      Sentiment features lowered RMSE for every model. A stacked regressor did best at about 1.02,
+      down from roughly 1.44 for the best ratings-only model. Values are read from the notebook's charts.
+  - chart: yelp-cf
+    title: Collaborative filtering on the test set
+    caption: >-
+      User–user filtering with adjusted cosine similarity (k = 20) reached RMSE 0.927 and MAE 0.666,
+      ahead of item–item at 1.115.
 ---
 
 ## Unlocking the Power of User Reviews for Personalized Recommendations
