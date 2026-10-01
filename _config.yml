@@ -58,9 +58,4 @@ exclude:
   - Gemfile.lock
   - vendor
   - .github
-  - _tabs
-  - _plugins
-  - _data/share.yml
-  - _data/contact.yml
-  - assets/lib
   - assets/images/avatar.jpg
