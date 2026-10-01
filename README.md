@@ -1,45 +1,38 @@
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+# jenish201.github.io
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `/_data`, `/_layouts`, `/_includes`, `/_sass` and `/assets`, as well as a small part of options of the `/_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+Personal portfolio of Jenish Dobariya — a custom Jekyll site (no theme gem) deployed to GitHub Pages by `.github/workflows/pages-deploy.yml`.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
+## Adding a project
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
+Create `_posts/YYYY-MM-DD-Slug.md`. The front matter drives the cards, index and case-study page:
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```yaml
+---
+title: "Project name"
+date: 2024-08-31 06:10:00 -0500
+discipline: Data engineering        # shown as the category label
+summary: >-
+  One or two sentences for cards and the case-study intro.
+stack: [Python, pandas, PostgreSQL]
+visual: pipeline                    # pipeline | graph | diffusion | index | scatter | stream | face | edge
+featured: true                      # featured projects appear in the homepage bento
+repo: https://github.com/Jenish201/your-repo
+metric: ["0.96", "SVC accuracy"]    # optional headline number on the case study
+---
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+The body is regular Markdown. Keep `featured: true` on an even number of posts (4 works best) so the bento grid stays balanced.
 
-## Prerequisites
+## Structure
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+- `index.html`, `about.html`, `404.html` — pages
+- `_layouts/default.html` — shell (nav, footer, meta); `_layouts/project.html` — case study
+- `_includes/visuals/*.svg` — generated project illustrations, picked by `visual`
+- `assets/css/site.css`, `assets/js/site.js` — all styling and interaction, no build step
 
-## Installation
+## Local preview
 
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
-
+```sh
+bundle install
+bundle exec jekyll serve
 ```
-$ bundle
-```
-
-## Usage
-
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE

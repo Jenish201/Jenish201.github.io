@@ -1,0 +1,74 @@
+---
+layout: default
+body_class: project
+---
+{%- assign viz = page.visual -%}
+{%- if page.previous -%}{%- assign nxt = page.previous -%}{%- else -%}{%- assign nxt = site.posts.first -%}{%- endif -%}
+<div class="progress" aria-hidden="true"></div>
+
+<article class="case">
+  <header class="case__hero">
+    <div class="wrap">
+      <a class="back reveal" href="{{ '/#work' | relative_url }}">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg>
+        All work
+      </a>
+      <p class="eyebrow reveal" style="--d:1">{{ page.discipline }} · {{ page.date | date: '%B %Y' }}</p>
+      <h1 class="case__title reveal" style="--d:2">{{ page.title }}</h1>
+      <p class="case__summary reveal" style="--d:3">{{ page.summary }}</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="bezel case__visual reveal" style="--d:4">
+      <div class="bezel__core">{% include visual.html %}</div>
+    </div>
+  </div>
+
+  <div class="wrap case__grid">
+    <aside class="case__meta">
+      <dl class="meta">
+        {%- if page.metric -%}
+        <div class="meta__row meta__row--metric">
+          <dt>{{ page.metric[1] }}</dt>
+          <dd class="meta__metric">{{ page.metric[0] }}</dd>
+        </div>
+        {%- endif -%}
+        <div class="meta__row">
+          <dt>Discipline</dt>
+          <dd>{{ page.discipline }}</dd>
+        </div>
+        <div class="meta__row">
+          <dt>Year</dt>
+          <dd>{{ page.date | date: '%Y' }}</dd>
+        </div>
+        <div class="meta__row">
+          <dt>Stack</dt>
+          <dd><ul class="tags">{%- for s in page.stack -%}<li>{{ s }}</li>{%- endfor -%}</ul></dd>
+        </div>
+      </dl>
+      {%- if page.repo -%}
+      <a class="btn" href="{{ page.repo }}" target="_blank" rel="noopener" data-magnetic>
+        <span>View repository</span>
+        <span class="btn__icon">{% include arrow.html %}</span>
+      </a>
+      {%- endif -%}
+    </aside>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+{%- if nxt.url != page.url -%}
+<section class="next" aria-label="Next project">
+  <div class="wrap">
+    <a class="next__link" href="{{ nxt.url | relative_url }}">
+      <span class="eyebrow">Next project</span>
+      <span class="next__title">{{ nxt.title }}</span>
+      <span class="next__arrow" aria-hidden="true">{% include arrow.html %}</span>
+    </a>
+  </div>
+</section>
+{%- endif -%}

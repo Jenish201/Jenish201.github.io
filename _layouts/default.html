@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0c0b">
+  <meta name="color-scheme" content="dark">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="{{ page.body_class | default: 'page' }}">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" data-nav>
+    <div class="nav__bar">
+      <a class="nav__mark" href="{{ '/' | relative_url }}" aria-label="Jenish Dobariya, home">
+        <span class="nav__monogram">JD</span>
+        <span class="nav__name">Jenish Dobariya</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="{{ '/#work' | relative_url }}">Work</a>
+        <a href="{{ '/#approach' | relative_url }}">Approach</a>
+        <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+        <a class="nav__cta" href="{{ '/#contact' | relative_url }}">Contact</a>
+      </nav>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+        <span class="sr-only">Menu</span>
+        <span class="nav__line"></span><span class="nav__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" data-menu hidden>
+    <nav class="menu__inner" aria-label="Mobile">
+      <a href="{{ '/#work' | relative_url }}" style="--i:0">Work</a>
+      <a href="{{ '/#approach' | relative_url }}" style="--i:1">Approach</a>
+      <a href="{{ '/about/' | relative_url }}" style="--i:2">About</a>
+      <a href="{{ '/#contact' | relative_url }}" style="--i:3">Contact</a>
+      <p class="menu__meta" style="--i:4">{{ site.author.email }}</p>
+    </nav>
+  </div>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p class="footer__copy">© {{ site.time | date: '%Y' }} {{ site.author.name }} · {{ site.author.location }}</p>
+      <ul class="footer__links">
+        <li><a href="https://github.com/{{ site.author.github }}" rel="me noopener" target="_blank">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="https://twitter.com/{{ site.author.twitter }}" rel="me noopener" target="_blank">X / Twitter</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

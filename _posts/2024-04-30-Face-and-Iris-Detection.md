@@ -1,7 +1,13 @@
 ---
-title: Real-Time Face and Eye Detection Using OpenCV
+title: "Real-time face and eye detection"
 date: 2024-04-30 02:28:00 -0500
-categories: [Data Science, Computer Vision]
+discipline: Computer vision
+summary: >-
+  Live webcam detection of faces and eyes using OpenCV Haar cascades — a fast prototype for biometric and HCI ideas.
+stack: [Python, OpenCV, Haar cascades, Matplotlib]
+visual: face
+featured: false
+repo: https://github.com/Jenish201/face_and_iris_detection
 tags: [Real time, Computer vision, Face, Iris, OpenCV]
 ---
 
@@ -21,7 +27,4 @@ This project uses OpenCV and Haar cascades to detect faces and eyes in real time
 ## Applications
 - **Security**: Integrate real-time detection for security cameras.
 - **Biometric Authentication**: Detect and recognize individuals for secure login.
-- **Human-Computer Interaction**: Build applicaitons responding to facial gestures.
-
-
-If you would like to check out the repository please:    [click here](https://github.com/Jenish201/face_and_iris_detection.git)
+- **Human-Computer Interaction**: Build applications responding to facial gestures.

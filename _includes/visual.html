@@ -1,0 +1,10 @@
+{%- case viz -%}
+  {%- when 'pipeline' -%}{% include visuals/pipeline.svg %}
+  {%- when 'graph' -%}{% include visuals/graph.svg %}
+  {%- when 'diffusion' -%}{% include visuals/diffusion.svg %}
+  {%- when 'index' -%}{% include visuals/index.svg %}
+  {%- when 'scatter' -%}{% include visuals/scatter.svg %}
+  {%- when 'stream' -%}{% include visuals/stream.svg %}
+  {%- when 'face' -%}{% include visuals/face.svg %}
+  {%- when 'edge' -%}{% include visuals/edge.svg %}
+{%- endcase -%}

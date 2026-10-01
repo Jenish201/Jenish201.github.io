@@ -1,4 +1,192 @@
 ---
-layout: home
-# Index page
+layout: default
+body_class: home
 ---
+{%- assign project_count = site.posts | size -%}
+
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="hero__field" data-field aria-hidden="true"></canvas>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow reveal"><span class="eyebrow__dot"></span>Data scientist · {{ site.author.location }}</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span class="reveal" style="--d:1">Finding the story</span></span>
+        <span class="line"><span class="reveal" style="--d:2"><em>hidden</em> in the data.</span></span>
+      </h1>
+      <p class="hero__lead reveal" style="--d:3">
+        I'm Jenish — I build data pipelines, train models and design retrieval systems, then explain what they found in plain language. M.S. in Data Science from DePaul University.
+      </p>
+      <div class="hero__actions reveal" style="--d:4">
+        <a class="btn" href="#work" data-magnetic>
+          <span>See the work</span>
+          <span class="btn__icon">{% include arrow.html %}</span>
+        </a>
+        <a class="link" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      </div>
+    </div>
+
+    <figure class="hero__portrait reveal" style="--d:2">
+      <div class="bezel bezel--portrait">
+        <div class="bezel__core">
+          <picture>
+            <source type="image/webp" srcset="{{ '/assets/images/portrait-640.webp' | relative_url }} 640w, {{ '/assets/images/portrait-1200.webp' | relative_url }} 1200w" sizes="(max-width: 860px) 80vw, 420px">
+            <img src="{{ '/assets/images/portrait-640.jpg' | relative_url }}" srcset="{{ '/assets/images/portrait-640.jpg' | relative_url }} 640w, {{ '/assets/images/portrait-1200.jpg' | relative_url }} 1200w" sizes="(max-width: 860px) 80vw, 420px" width="640" height="960" alt="Portrait of Jenish Dobariya smiling outdoors in a grey shirt">
+          </picture>
+        </div>
+      </div>
+      <figcaption class="chip chip--float">
+        <span class="chip__k">Education</span>
+        <span class="chip__v">M.S. Data Science · DePaul '24</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <dl class="stats">
+      <div class="stats__item reveal" style="--d:1"><dt>Case studies</dt><dd>{% if project_count < 10 %}0{% endif %}{{ project_count }}</dd></div>
+      <div class="stats__item reveal" style="--d:2"><dt>Best model accuracy</dt><dd>0.96</dd></div>
+      <div class="stats__item reveal" style="--d:3"><dt>Disciplines</dt><dd>06</dd></div>
+      <div class="stats__item reveal" style="--d:4"><dt>Degrees, DePaul</dt><dd>02</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section work" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal">Selected work</p>
+      <h2 class="section__title reveal" id="work-title">Four projects, <em>end to end.</em></h2>
+      <p class="section__lede reveal">Ingestion, modeling and evaluation — each one shipped with code you can read.</p>
+    </header>
+
+    <div class="bento">
+      {%- for post in site.posts -%}
+        {%- if post.featured -%}
+          {%- assign viz = post.visual -%}
+          <article class="bento__item reveal">
+            <a class="card bezel" href="{{ post.url | relative_url }}" data-spotlight>
+              <div class="bezel__core card__core">
+                <div class="card__visual">{% include visual.html %}</div>
+                <div class="card__body">
+                  <p class="card__meta"><span>{{ post.discipline }}</span><span>{{ post.date | date: '%Y' }}</span></p>
+                  <h3 class="card__title">{{ post.title }}</h3>
+                  <p class="card__summary">{{ post.summary }}</p>
+                  <ul class="tags" aria-label="Stack">
+                    {%- for s in post.stack limit: 4 -%}<li>{{ s }}</li>{%- endfor -%}
+                  </ul>
+                </div>
+                <span class="card__arrow" aria-hidden="true">{% include arrow.html %}</span>
+              </div>
+            </a>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section index" aria-labelledby="index-title">
+  <div class="wrap">
+    <header class="section__head section__head--row">
+      <h2 class="section__title section__title--sm reveal" id="index-title">Full index</h2>
+      <p class="section__count reveal">{{ project_count }} projects · 2023 – {{ site.posts.first.date | date: '%Y' }}</p>
+    </header>
+    <ol class="rows" data-rows>
+      {%- for post in site.posts -%}
+        {%- assign viz = post.visual -%}
+        <li class="rows__item reveal">
+          <a class="row" href="{{ post.url | relative_url }}">
+            <span class="row__num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+            <span class="row__title">{{ post.title }}</span>
+            <span class="row__disc">{{ post.discipline }}</span>
+            <span class="row__year">{{ post.date | date: '%Y' }}</span>
+            <span class="row__arrow" aria-hidden="true">{% include arrow.html %}</span>
+            <span class="row__preview" aria-hidden="true">{% include visual.html %}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<section class="section approach" id="approach" aria-labelledby="approach-title">
+  <div class="wrap approach__grid">
+    <header class="approach__head">
+      <p class="eyebrow reveal">Approach</p>
+      <h2 class="section__title reveal" id="approach-title">Raw data in.<br><em>Decisions out.</em></h2>
+      <p class="section__lede reveal">Every project runs the same four steps. Most of the work is in the first two.</p>
+    </header>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__num">01</span>
+        <div>
+          <h3 class="step__title">Collect</h3>
+          <p>Pull from wherever the data lives — the Twitter API, PostgreSQL, Parquet files, the Medline corpus, a live webcam feed.</p>
+        </div>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">02</span>
+        <div>
+          <h3 class="step__title">Shape</h3>
+          <p>Clean, validate and reshape it. Handle missing values, fix types, tokenize and stem text, scale features before anything gets trained.</p>
+        </div>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">03</span>
+        <div>
+          <h3 class="step__title">Model</h3>
+          <p>Choose the simplest model that works, then compare it against alternatives: classifiers, collaborative filtering, cosine ranking, diffusion.</p>
+        </div>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">04</span>
+        <div>
+          <h3 class="step__title">Explain</h3>
+          <p>Measure it honestly — accuracy, precision and recall, mean average precision — and write it up so people who don't read code can act on it.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section toolkit" aria-labelledby="toolkit-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal">Toolkit</p>
+      <h2 class="section__title reveal" id="toolkit-title">What I reach for.</h2>
+    </header>
+    <div class="kit">
+      <div class="kit__cell kit__cell--wide bezel reveal"><div class="bezel__core">
+        <h3 class="kit__label">Data &amp; engineering</h3>
+        <p class="kit__list">Python · SQL · pandas · NumPy · PostgreSQL · Parquet · ETL design · data validation</p>
+      </div></div>
+      <div class="kit__cell bezel reveal"><div class="bezel__core">
+        <h3 class="kit__label">Machine learning</h3>
+        <p class="kit__list">SVC · random forest · AdaBoost · KNN · collaborative filtering</p>
+      </div></div>
+      <div class="kit__cell bezel reveal"><div class="bezel__core">
+        <h3 class="kit__label">Language &amp; search</h3>
+        <p class="kit__list">Sentiment analysis · topic modeling · inverted indexes · MAP</p>
+      </div></div>
+      <div class="kit__cell kit__cell--wide bezel reveal"><div class="bezel__core">
+        <h3 class="kit__label">Vision &amp; generative</h3>
+        <p class="kit__list">OpenCV · Haar cascades · Canny · PyTorch · diffusers · Stable Diffusion</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact__inner">
+    <p class="eyebrow reveal">Contact</p>
+    <h2 class="contact__title reveal" id="contact-title">Got data with<br>a story <em>in it?</em></h2>
+    <div class="contact__row reveal">
+      <a class="contact__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      <button class="btn btn--ghost" type="button" data-copy="{{ site.author.email }}">
+        <span data-copy-label>Copy email</span>
+        <span class="btn__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span>
+      </button>
+    </div>
+    <p class="contact__status" role="status" aria-live="polite" data-copy-status></p>
+  </div>
+</section>

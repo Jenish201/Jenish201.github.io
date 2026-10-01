@@ -1,0 +1,89 @@
+---
+layout: default
+title: About
+permalink: /about/
+description: Jenish Dobariya is a data scientist with an M.S. in Data Science from DePaul University.
+---
+<section class="about">
+  <div class="wrap about__grid">
+    <div class="about__copy">
+      <p class="eyebrow reveal">About</p>
+      <h1 class="case__title reveal" style="--d:1">I like the part where the <em>numbers start talking.</em></h1>
+      <div class="prose prose--lead reveal" style="--d:2">
+        <p>I'm a data scientist based in Chicago. I studied information technology and then data science at DePaul University, and most of what I build sits where engineering meets analysis: getting data out of messy sources, shaping it into something trustworthy, and modeling it until it says something useful.</p>
+        <p>Right now I'm going deeper on machine learning applications, data warehousing and advanced ML. Outside of work I swim — badly, but often.</p>
+      </div>
+    </div>
+    <figure class="about__portrait reveal" style="--d:2">
+      <div class="bezel bezel--portrait">
+        <div class="bezel__core">
+          <picture>
+            <source type="image/webp" srcset="{{ '/assets/images/portrait-640.webp' | relative_url }} 640w, {{ '/assets/images/portrait-1200.webp' | relative_url }} 1200w" sizes="(max-width: 860px) 80vw, 380px">
+            <img src="{{ '/assets/images/portrait-640.jpg' | relative_url }}" srcset="{{ '/assets/images/portrait-640.jpg' | relative_url }} 640w, {{ '/assets/images/portrait-1200.jpg' | relative_url }} 1200w" sizes="(max-width: 860px) 80vw, 380px" width="640" height="960" alt="Portrait of Jenish Dobariya smiling outdoors in a grey shirt">
+          </picture>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="edu-title">
+  <div class="wrap">
+    <header class="section__head section__head--row">
+      <h2 class="section__title section__title--sm reveal" id="edu-title">Education</h2>
+      <p class="section__count reveal">DePaul University · Chicago</p>
+    </header>
+    <ul class="ledger">
+      <li class="ledger__row reveal">
+        <span class="ledger__year">2024</span>
+        <span class="ledger__title">Master of Science, Data Science</span>
+        <span class="ledger__org">DePaul University</span>
+      </li>
+      <li class="ledger__row reveal">
+        <span class="ledger__year">2023</span>
+        <span class="ledger__title">Bachelor of Science, Information Technology</span>
+        <span class="ledger__org">DePaul University</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="cert-title">
+  <div class="wrap">
+    <header class="section__head section__head--row">
+      <h2 class="section__title section__title--sm reveal" id="cert-title">Certifications</h2>
+      <p class="section__count reveal">03 credentials</p>
+    </header>
+    <ul class="ledger">
+      <li class="ledger__row reveal">
+        <span class="ledger__year">2023</span>
+        <a class="ledger__title ledger__link" href="https://www.datacamp.com/certificate/DA0026281515480" target="_blank" rel="noopener">Data Analyst — Professional {% include arrow.html %}</a>
+        <span class="ledger__org">DataCamp</span>
+      </li>
+      <li class="ledger__row reveal">
+        <span class="ledger__year">2023</span>
+        <a class="ledger__title ledger__link" href="https://www.datacamp.com/certificate/DAA0019138990820" target="_blank" rel="noopener">Data Analyst — Associate {% include arrow.html %}</a>
+        <span class="ledger__org">DataCamp</span>
+      </li>
+      <li class="ledger__row reveal">
+        <span class="ledger__year">2022</span>
+        <a class="ledger__title ledger__link" href="https://www.coursera.org/account/accomplishments/professional-cert/8RKNYHPY5FY7" target="_blank" rel="noopener">Google Data Analytics {% include arrow.html %}</a>
+        <span class="ledger__org">Google · Coursera</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section contact" aria-labelledby="about-contact">
+  <div class="wrap contact__inner">
+    <p class="eyebrow reveal">Say hello</p>
+    <h2 class="contact__title reveal" id="about-contact">Let's talk <em>data.</em></h2>
+    <div class="contact__row reveal">
+      <a class="contact__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      <a class="btn btn--ghost" href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">
+        <span>LinkedIn</span>
+        <span class="btn__icon">{% include arrow.html %}</span>
+      </a>
+    </div>
+  </div>
+</section>
